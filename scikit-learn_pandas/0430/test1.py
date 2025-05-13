@@ -24,11 +24,11 @@ X_test_scaled = scaler.transform(X_test)
 
 # 4. 모델 훈련
 model = SGDRegressor(
-  max_iter=1000,
-  tol=0.01,
-  eta0=0.001,
-  learning_rate='constant',
-  penalty='l1',
+  max_iter=100000,
+  tol=0.0001,
+  eta0=0.00001,
+  learning_rate='adaptive',
+  penalty= None,
   random_state=42
 )
 model.fit(X_train_scaled, y_train)
